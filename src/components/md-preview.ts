@@ -20,8 +20,8 @@ export class MdPreview extends LitElement {
       padding-right: 44px;
       white-space: pre-wrap;
       word-break: break-word;
-      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, 'Courier New', monospace;
-      font-size: 11.5px;
+      font-family: monospace;
+      font-size: 11px;
       line-height: 1.6;
       min-height: 100%;
       overflow-y: auto;

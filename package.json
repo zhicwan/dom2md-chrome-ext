@@ -32,6 +32,7 @@
     "turndown": "^7.2.4"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/chrome": "^0.1.42",
     "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",

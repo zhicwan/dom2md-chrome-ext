@@ -10,6 +10,8 @@ export class MdPreview extends LitElement {
       display: block;
       color-scheme: light dark;
       color: inherit;
+      height: 100%;
+      overflow-y: auto;
     }
 
     pre {
@@ -21,7 +23,8 @@ export class MdPreview extends LitElement {
       font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, 'Courier New', monospace;
       font-size: 11.5px;
       line-height: 1.6;
-      min-height: 100vh;
+      min-height: 100%;
+      overflow-y: auto;
     }
 
     pre::selection {

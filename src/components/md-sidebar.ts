@@ -21,12 +21,13 @@ export class MdSidebar extends LitElement {
     :host {
       display: block;
       position: relative;
-      min-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
       color-scheme: light dark;
     }
 
     .actions-wrapper {
-      position: absolute;
+      position: fixed;
       top: 6px;
       right: 6px;
       z-index: 10;

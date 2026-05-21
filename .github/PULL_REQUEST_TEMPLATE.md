@@ -2,7 +2,7 @@
 Brief description of what this PR does.
 
 ## Changes
-- 
+- <!-- Describe your changes here -->
 
 ## Checklist
 - [ ] Code passes `npm run lint`

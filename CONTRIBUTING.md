@@ -4,6 +4,8 @@ Thank you for your interest in contributing! Here's how you can help.
 
 ## Getting Started
 
+> **Requirements:** Node.js >= 18, npm >= 9
+
 1. **Fork** the repository
 2. **Clone** your fork: `git clone https://github.com/<your-username>/dom2md-chrome-ext.git`
 3. **Install** dependencies: `npm install`

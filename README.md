@@ -21,6 +21,8 @@ A Chrome DevTools extension that converts selected DOM elements to Markdown inst
 
 ## 📦 Installation (from source)
 
+> **Requirements:** Node.js >= 18, npm >= 9
+
 ```bash
 git clone https://github.com/zhicwan/dom2md-chrome-ext.git
 cd dom2md-chrome-ext
@@ -66,6 +68,8 @@ Then load the extension in Chrome:
 - ⚡ **快速轻量** — 基于 [Turndown](https://github.com/mixmark-io/turndown)，无需网络请求
 
 ## 📦 从源码安装
+
+> **环境要求：** Node.js >= 18, npm >= 9
 
 ```bash
 git clone https://github.com/zhicwan/dom2md-chrome-ext.git

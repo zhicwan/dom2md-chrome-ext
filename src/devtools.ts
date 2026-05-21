@@ -1,5 +1,5 @@
 chrome.devtools.panels.elements.createSidebarPane(
-  'DOM → MD',
+  'Markdown',
   (sidebar: chrome.devtools.panels.ExtensionSidebarPane) => {
     sidebar.setPage('sidebar.html');
   },

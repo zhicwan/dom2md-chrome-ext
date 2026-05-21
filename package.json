@@ -7,12 +7,13 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "tsc && node scripts/copy-assets.js",
-    "watch": "tsc --watch",
+    "build": "tsx scripts/build.ts && tsx scripts/copy-assets.ts",
+    "watch": "tsx scripts/build.ts --watch",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.scripts.json",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
-    "format": "prettier --write \"src/**/*.{ts,html}\" \"*.json\"",
-    "format:check": "prettier --check \"src/**/*.{ts,html}\" \"*.json\"",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.html\" \"scripts/**/*.ts\" \"*.json\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"src/**/*.html\" \"scripts/**/*.ts\" \"*.json\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -29,14 +30,19 @@
     "npm": ">=9"
   },
   "dependencies": {
+    "lit": "^3.3.3",
     "turndown": "^7.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/chrome": "^0.1.42",
+    "@types/node": "^25.9.1",
+    "@types/turndown": "^5.0.6",
+    "esbuild": "^0.28.0",
     "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.8.3",
+    "tsx": "^4.22.3",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.4"
   }

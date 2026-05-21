@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "DOM to Markdown",
+  "version": "1.0.0",
+  "description": "Convert selected DOM elements to Markdown via DevTools sidebar",
+  "devtools_page": "devtools.html",
+  "minimum_chrome_version": "88",
+  "permissions": ["clipboardWrite"],
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}

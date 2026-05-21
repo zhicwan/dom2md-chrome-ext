@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "DOM to Markdown",
+  "name": "DOM2MD",
   "version": "1.0.0",
-  "description": "Convert selected DOM elements to Markdown via DevTools sidebar",
+  "description": "Convert selected DOM elements to Markdown instantly from Chrome DevTools.",
   "devtools_page": "devtools.html",
   "minimum_chrome_version": "88",
   "permissions": ["clipboardWrite"],

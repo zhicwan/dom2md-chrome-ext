@@ -65,12 +65,14 @@ export class MdSidebar extends LitElement {
     }
   `;
 
+  private readonly _onSelectionChanged = (): void => {
+    void this._fetchAndPreview();
+  };
+
   override connectedCallback(): void {
     super.connectedCallback();
 
-    chrome.devtools.panels.elements.onSelectionChanged.addListener(() => {
-      void this._fetchAndPreview();
-    });
+    chrome.devtools.panels.elements.onSelectionChanged.addListener(this._onSelectionChanged);
 
     void this._fetchAndPreview();
 
@@ -79,6 +81,7 @@ export class MdSidebar extends LitElement {
 
   override disconnectedCallback(): void {
     super.disconnectedCallback();
+    chrome.devtools.panels.elements.onSelectionChanged.removeListener(this._onSelectionChanged);
     document.removeEventListener('keydown', this._onKeydown);
   }
 
@@ -123,7 +126,7 @@ export class MdSidebar extends LitElement {
     try {
       await copyText(this._markdown);
       this._clearToast();
-      this._actions.showCopied();
+      this._actions?.showCopied();
     } catch (e: unknown) {
       this._showToast('Clipboard error: ' + (e instanceof Error ? e.message : String(e)), true);
     }

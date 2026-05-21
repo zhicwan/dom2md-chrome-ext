@@ -14,6 +14,14 @@ export class MdActions extends LitElement {
 
   private _copyTimer: ReturnType<typeof setTimeout> | null = null;
 
+  override disconnectedCallback(): void {
+    super.disconnectedCallback();
+    if (this._copyTimer) {
+      clearTimeout(this._copyTimer);
+      this._copyTimer = null;
+    }
+  }
+
   static override styles = css`
     :host {
       display: flex;

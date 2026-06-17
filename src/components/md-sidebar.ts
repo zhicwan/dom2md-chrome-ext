@@ -29,7 +29,7 @@ export class MdSidebar extends LitElement {
     .actions-wrapper {
       position: fixed;
       top: 6px;
-      right: 6px;
+      right: 12px;
       z-index: 10;
       opacity: 0.5;
       transition: opacity 0.2s;
@@ -75,14 +75,11 @@ export class MdSidebar extends LitElement {
     chrome.devtools.panels.elements.onSelectionChanged.addListener(this._onSelectionChanged);
 
     void this._fetchAndPreview();
-
-    document.addEventListener('keydown', this._onKeydown);
   }
 
   override disconnectedCallback(): void {
     super.disconnectedCallback();
     chrome.devtools.panels.elements.onSelectionChanged.removeListener(this._onSelectionChanged);
-    document.removeEventListener('keydown', this._onKeydown);
   }
 
   protected override render() {
@@ -101,14 +98,14 @@ export class MdSidebar extends LitElement {
 
   private async _fetchAndPreview(): Promise<void> {
     try {
-      const htmlContent = await getSelectedHTML();
-      if (!htmlContent) {
+      const result = await getSelectedHTML();
+      if (!result) {
         this._markdown = '';
         this._showToast('No element selected', true);
         return;
       }
       this._clearToast();
-      this._markdown = this._converter.convert(htmlContent);
+      this._markdown = await this._converter.convert(result.html, result.baseURL, result.pageURL);
     } catch (e: unknown) {
       this._markdown = '';
       this._showToast('Error: ' + (e instanceof Error ? e.message : String(e)), true);
@@ -135,16 +132,6 @@ export class MdSidebar extends LitElement {
   private _onRefresh(): void {
     void this._fetchAndPreview();
   }
-
-  private readonly _onKeydown = (e: KeyboardEvent): void => {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
-      const selection = window.getSelection();
-      if (selection && selection.isCollapsed && this._markdown) {
-        e.preventDefault();
-        void this._onCopy();
-      }
-    }
-  };
 
   private _showToast(msg: string, isError: boolean): void {
     this._toastMsg = msg;

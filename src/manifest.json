@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2LrmfYidCnjDhA45Nez/zOxFNdu7nH9UHUcrPFd5QsW8HvRYWfWjZlUf605QE45j2fOcQoUHN1rAk2U4wETdgBRF+nLJq/+4JRe/smdVYEItNJJWLrCqneBbed6UcmRBWUM1bSJAmFiJAtsQ1ZkDQ6GsLIFemcP1ZnubYVODaJgya+0sqpsnS5XNtRNIB7smLkOgP56Bt/CQmkNWV/+8glERzMkQ0duCXbW0p+CNWNjeiApdawfcg2labrjtxqHE5H0BLJGym3R0slEJ3gnPG6rjmaJSYOKOALttnJyomblb3klrZaePyHur0uRZuGWFKBBMu7sEYpTLaHxUfMIi1QIDAQAB",
   "name": "DOM2MD",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Convert selected DOM elements to Markdown instantly from Chrome DevTools.",
   "devtools_page": "devtools.html",
   "minimum_chrome_version": "88",
